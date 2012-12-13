@@ -1,0 +1,20 @@
+$containerWidth: 980px;
+$marginWidth: 5px;
+$columns: 24;
+
+/* function to calc width of columns */
+@function calcWidth($n) {
+    @return (($containerWidth / $columns) * $n) - ($marginWidth * 2);
+}
+
+@mixin container {
+    width: $containerWidth;
+    margin: 0px auto;
+}
+
+@mixin columns($n) {
+    float: left;
+    display: inline;
+    width: calcWidth($n);
+    margin: 0px $marginWidth;
+}
